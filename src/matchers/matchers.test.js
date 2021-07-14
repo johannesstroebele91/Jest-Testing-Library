@@ -1,3 +1,5 @@
+// Ref: https://jestjs.io/docs/using-matchers
+
 // importing the file
 const sum = require("./sum");
 
@@ -97,4 +99,19 @@ const shoppingList = [
 test("the shopping list has milk on it", () => {
   expect(shoppingList).toContain("milk");
   expect(new Set(shoppingList)).toContain("milk");
+});
+
+// 6) Exceptions
+// test whether a particular function
+// throws an error when it's called
+
+function compileAndroidCode() {
+  throw new Error("you are using the wrong JDK");
+}
+
+test("compiling android goes as expected", () => {
+  expect(() => compileAndroidCode()).toThrow();
+  expect(() => compileAndroidCode()).toThrow(Error);
+
+  expect(() => compileAndroidCode()).toThrow("you are using the wrong JDK");
 });
