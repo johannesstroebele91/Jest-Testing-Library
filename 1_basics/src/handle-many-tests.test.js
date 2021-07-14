@@ -3,13 +3,10 @@
 // 1) beforeEach / afterEach
 // If you have some work you need to do repeatedly for many tests, you can use beforeEach and afterEach
 // method initializeCityDatabase() that must be called before each of these tests
+
 beforeEach(() => {
   initializeCityDatabase();
 });
-/* Alternative for async
-beforeEach(() => {
-  return initializeCityDatabase();
-});*/
 
 afterEach(() => {
   clearCityDatabase();
@@ -29,11 +26,11 @@ beforeEach(() => {
   return initializeCityDatabase();
 });
 
-test("city database has Vienna", () => {
+test.skip("city database has Vienna", () => {
   expect(isCity("Vienna")).toBeTruthy();
 });
 
-test("city database has San Juan", () => {
+test.skip("city database has San Juan", () => {
   expect(isCity("San Juan")).toBeTruthy();
 });
 
@@ -43,11 +40,11 @@ describe("matching cities to foods", () => {
     return initializeFoodDatabase();
   });
 
-  test("Vienna <3 veal", () => {
+  test.skip("Vienna <3 veal", () => {
     expect(isValidCityFoodPair("Vienna", "Wiener Schnitzel")).toBe(true);
   });
 
-  test("San Juan <3 plantains", () => {
+  test.skip("San Juan <3 plantains", () => {
     expect(isValidCityFoodPair("San Juan", "Mofongo")).toBe(true);
   });
 });
