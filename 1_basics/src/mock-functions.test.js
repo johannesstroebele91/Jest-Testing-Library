@@ -19,24 +19,24 @@ expect(mockCallback.mock.calls.length).toBe(2);
 expect(mockCallback.mock.calls[0][0]).toBe(0);
 
 // The first argument of the second call to the function was 1
-expect(mockCallback.mock.calls[1][0]).toBe(1);
+expect(mockCallback.mock.calls[1][0]).toBe(2);
 
 // The return value of the first call to the function was 42
 expect(mockCallback.mock.results[0].value).toBe(42);
 
 // 2) .mock property
-const myMock = jest.fn();
+const someMockFunction = jest.fn();
 
-const a = new myMock();
+const a = new someMockFunction();
 const b = {};
-const bound = myMock.bind(b);
+const bound = someMockFunction.bind(b);
 bound();
 
-console.log(myMock.mock.instances);
+console.log(someMockFunction.mock.instances);
 // > [ <a>, <b> ]
 
 // The function was called exactly once
-expect(someMockFunction.mock.calls.length).toBe(1);
+expect(someMockFunction.mock.calls.length).toBe(2);
 
 // The first arg of the first call to the function was 'first arg'
 expect(someMockFunction.mock.calls[0][0]).toBe("first arg");
