@@ -30,19 +30,19 @@ test("this test will not run", () => {
 });
 ```
 
-# test
+# test alias it
 
-// ref: https://jestjs.io/docs/api
+test has the alias "it", so e.g. it('did not rain', ...);
+Ref: https://jestjs.io/docs/api
 
-test(name, fn, timeout)#
-Also under the alias: it(name, fn, timeout)
-
-test('did not rain', () => {
-expect(inchesOfRain()).toBe(0);
+```javascript
+test("did not rain", () => {
+  expect(inchesOfRain()).toBe(0);
 });
 
-Is the same as:
+// Is the same as:
 
-it('did not rain', () => {
-expect(inchesOfRain()).toBe(0);
+it("did not rain", () => {
+  expect(inchesOfRain()).toBe(0);
 });
+```
